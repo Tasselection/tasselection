@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brief Client - Future Ready</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/brief.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>BRIEF CLIENT</h1>
+            <p class="subtitle">Capture intuitive des besoins de votre projet événementiel</p>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 8.33%"></div>
+            </div>
+            <div class="progress-steps">
+                <div class="progress-step active">1. Général</div>
+                <div class="progress-step">2. Contact</div>
+                <div class="progress-step">3. Projet</div>
+                <div class="progress-step">4. Cible</div>
+                <div class="progress-step">5. Contexte</div>
+                <div class="progress-step">6. Programme</div>
+                <div class="progress-step">7. Concept</div>
+                <div class="progress-step">8. Format</div>
+                <div class="progress-step">9. Logistique</div>
+                <div class="progress-step">10. Visuel</div>
+                <div class="progress-step">11. Budget</div>
+                <div class="progress-step">12. Contraintes</div>
+            </div>
+            <div class="step-indicator">Étape <strong>1</strong> sur <strong>12</strong></div>
+        </div>
+
+        <!-- Save Indicator -->
+        <div class="save-indicator">Sauvegardé</div>
+
+        <!-- Wizard Form -->
+        <form id="briefForm" class="wizard-content">
+
+            <!-- STEP 1: Informations Générales -->
+            <section class="wizard-step active" data-step="1">
+                <div class="section-header">
+                    <span class="section-icon">👁️</span>
+                    <div>
+                        <h2 class="section-title">Informations Générales</h2>
+                        <p class="section-subtitle">Identification de l'entreprise cliente</p>
+                    </div>
+                </div>
+
+                <div class="form-grid two-columns">
+                    <div class="form-group full-width">
+                        <label class="form-label">Nom de l'entreprise <span class="required">*</span></label>
+                        <input type="text" class="form-input" name="entreprise" placeholder="Ex: ACME Corporation" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Secteur d'activité</label>
+                        <select class="form-select" name="secteur">
+                            <option value="">Sélectionner...</option>
+                            <option value="technologie">Technologie / IT</option>
+                            <option value="finance">Finance / Banque / Assurance</option>
+                            <option value="sante">Santé / Pharmaceutique</option>
+                            <option value="retail">Retail / Distribution</option>
+                            <option value="industrie">Industrie / Manufacturing</option>
+                            <option value="services">Services aux entreprises</option>
+                            <option value="media">Média / Communication</option>
+                            <option value="immobilier">Immobilier</option>
+                            <option value="energie">Énergie / Environnement</option>
+                            <option value="transport">Transport / Logistique</option>
+                            <option value="luxe">Luxe / Mode</option>
+                            <option value="agroalimentaire">Agroalimentaire</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Ville</label>
+                        <input type="text" class="form-input" name="ville" placeholder="Ex: Paris">
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEP 2: Contact Client -->
+            <section class="wizard-step" data-step="2">
+                <div class="section-header">
+                    <span class="section-icon">🤝</span>
+                    <div>
+                        <h2 class="section-title">Contact Client</h2>
+                        <p class="section-subtitle">Coordonnées de votre interlocuteur principal</p>
+                    </div>
+                </div>
+
+                <div class="form-grid two-columns">
+                    <div class="form-group full-width">
+                        <label class="form-label">Nom & Prénom <span class="required">*</span></label>
+                        <input type="text" class="form-input" name="contact_nom" placeholder="Ex: Jean Dupont" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Numéro de téléphone</label>
+                        <input type="tel" class="form-input" name="contact_telephone" placeholder="Ex: 06 12 34 56 78">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" name="contact_email" placeholder="Ex: jean.dupont@entreprise.com">
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEP 3: Informations Projet -->
+            <section class="wizard-step" data-step="3">
+                <div class="section-header">
+                    <span class="section-icon">ℹ️</span>
+                    <div>
+                        <h2 class="section-title">Informations Projet</h2>
+                        <p class="section-subtitle">Les grandes lignes de l'événement</p>
+                    </div>
+                </div>
+
+                <div class="form-grid two-columns">
+                    <div class="form-group full-width">
+                        <label class="form-label">Nom de l'événement</label>
+                        <input type="text" class="form-input" name="evenement_nom" placeholder="Ex: Convention Annuelle 2026">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Date(s) envisagée(s)</label>
+                        <input type="text" class="form-input" name="evenement_dates" placeholder="Ex: 15-16 septembre 2026">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Lieu souhaité ou zone géographique</label>
+                        <input type="text" class="form-input" name="evenement_lieu" placeholder="Ex: Métropole Lilloise">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label class="form-label">Format de l'événement</label>
+                        <input type="text" class="form-input" name="evenement_format" placeholder="Ex: Convention + Défilé, Séminaire, Soirée de gala...">
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEP 4: Cible & Participants -->
+            <section class="wizard-step" data-step="4">
+                <div class="section-header">
+                    <span class="section-icon">🎯</span>
+                    <div>
+                        <h2 class="section-title">Cible & Participants</h2>
+                        <p class="section-subtitle">Profil des personnes attendues</p>
+                    </div>
+                </div>
+
+                <div class="form-grid two-columns">
+                    <div class="form-group">
+                        <label class="form-label">Nombre de participants</label>
+                        <input type="text" class="form-input" name="participants_nombre" placeholder="Ex: 150 puis 450 pax">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Public invité</label>
+                        <input type="text" class="form-input" name="participants_public" placeholder="Ex: Affiliés & collaborateurs">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Fonction</label>
+                        <input type="text" class="form-input" name="participants_fonction" placeholder="Ex: Managers, Commerciaux, Direction">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Âge moyen</label>
+                        <input type="text" class="form-input" name="participants_age" placeholder="Ex: 35-50 ans">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label class="form-label">Provenance géographique</label>
+                        <input type="text" class="form-input" name="participants_provenance" placeholder="Ex: France entière, Région parisienne...">
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEP 5: Contexte -->
+            <section class="wizard-step" data-step="5">
+                <div class="section-header">
+                    <span class="section-icon">❓</span>
+                    <div>
+                        <h2 class="section-title">Contexte</h2>
+                        <p class="section-subtitle">Comprendre les enjeux et l'historique</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Pourquoi cet événement est-il organisé ?</label>
+                        <textarea class="form-textarea" name="contexte_pourquoi" placeholder="Décrivez les raisons et motivations derrière cet événement..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Historique des éditions précédentes</label>
+                        <textarea class="form-textarea small" name="contexte_historique" placeholder="Y a-t-il eu des éditions précédentes ? Qu'est-ce qui a fonctionné ou non ?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Événement ponctuel ou récurrent ?</label>
+                        <div class="toggle-group">
+                            <label class="toggle">
+                                <input type="checkbox" name="contexte_recurrent" value="oui">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span class="toggle-label">Événement récurrent</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Contexte interne/externe particulier</label>
+                        <textarea class="form-textarea small" name="contexte_interne" placeholder="Restructuration, lancement produit, anniversaire, fusion..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Objectifs principaux</label>
+                        <textarea class="form-textarea" name="contexte_objectifs" placeholder="Quels sont les objectifs mesurables de cet événement ?"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEP 6: Programme Prévisionnel -->
+            <section class="wizard-step" data-step="6">
+                <div class="section-header">
+                    <span class="section-icon">📅</span>
+                    <div>
+                        <h2 class="section-title">Programme Prévisionnel</h2>
+                        <p class="section-subtitle">Déroulé de la journée</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label class="form-label">Timeline de l'événement</label>
+                        <p class="form-hint">Ajoutez les différents moments de votre événement</p>
+
+                        <div class="timeline-builder">
+                            <div class="timeline-item">
+                                <div class="timeline-time">
+                                    <input type="text" class="form-input" placeholder="09:00" name="timeline_time_0">
+                                </div>
+                                <div class="timeline-description">
+                                    <input type="text" class="form-input" placeholder="Description du moment..." name="timeline_desc_0">
+                                </div>
+                            </div>
+                            <button type="button" class="btn-add btn-add-timeline">+ Ajouter un créneau</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEP 7: Concept & Expérience Souhaitée -->
+            <section class="wizard-step" data-step="7">
+                <div class="section-header">
+                    <span class="section-icon">💡</span>
+                    <div>
+                        <h2 class="section-title">Concept & Expérience Souhaitée</h2>
+                        <p class="section-subtitle">L'ADN de votre événement</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Message clé à faire passer</label>
+                        <textarea class="form-textarea" name="concept_message" placeholder="Quel est le message principal que les participants doivent retenir ?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Que doivent retenir les participants ?</label>
+                        <textarea class="form-textarea small" name="concept_retenir" placeholder="Les 2-3 points essentiels à mémoriser..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Ambiance souhaitée</label>
+                        <input type="text" class="form-input" name="concept_ambiance" placeholder="Ex: Dynamique, Inspirante, Conviviale, Premium...">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Parcours attendu</label>
+                        <textarea class="form-textarea small" name="concept_parcours" placeholder="Comment les participants vont-ils vivre l'événement ?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Temps forts souhaités</label>
+                        <textarea class="form-textarea small" name="concept_temps_forts" placeholder="Quels sont les moments clés à créer ?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Interactions souhaitées</label>
+                        <textarea class="form-textarea small" name="concept_interactions" placeholder="Comment les participants interagissent-ils entre eux ?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Animations envisagées</label>
+                        <input type="text" class="form-input" name="concept_animations" placeholder="Ex: Team building, Quiz, Ateliers, Spectacle...">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Speaker / Intervenants</label>
+                        <input type="text" class="form-input" name="concept_speaker" placeholder="Ex: PDG, Conférencier externe, Artiste...">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Digital / Gamification</label>
+                        <input type="text" class="form-input" name="concept_digital" placeholder="Ex: App événementielle, Vote en direct, QR codes...">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Cadeaux / Goodies</label>
+                        <textarea class="form-textarea small" name="concept_goodies" placeholder="Quels cadeaux ou goodies pour les participants ?"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEP 8: Format & Contenu -->
+            <section class="wizard-step" data-step="8">
+                <div class="section-header">
+                    <span class="section-icon">🎬</span>
+                    <div>
+                        <h2 class="section-title">Format & Contenu</h2>
+                        <p class="section-subtitle">Inspirations et références visuelles</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Événements inspirants</label>
+                        <textarea class="form-textarea small" name="format_inspirations" placeholder="Des événements qui vous ont marqué et que vous aimeriez reproduire..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Univers visuels de référence</label>
+                        <textarea class="form-textarea small" name="format_univers" placeholder="Décrivez l'univers visuel souhaité (couleurs, style, atmosphère)..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Marques de référence</label>
+                        <textarea class="form-textarea small" name="format_marques" placeholder="Des marques dont vous admirez la communication événementielle..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Moodboard</label>
+                        <input type="text" class="form-input" name="format_moodboard" placeholder="Lien vers un moodboard ou description">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Liens / Documents de référence</label>
+                        <textarea class="form-textarea small" name="format_liens" placeholder="URLs, liens Drive, références diverses..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEP 9: Logistique & Technique -->
+            <section class="wizard-step" data-step="9">
+                <div class="section-header">
+                    <span class="section-icon">🔗</span>
+                    <div>
+                        <h2 class="section-title">Logistique & Technique</h2>
+                        <p class="section-subtitle">Aspects pratiques de l'événement</p>
+                    </div>
+                </div>
+
+                <div class="form-grid two-columns">
+                    <!-- Lieu -->
+                    <div class="form-group">
+                        <label class="form-label">Lieu déjà réservé ?</label>
+                        <select class="form-select" name="lieu_reserve">
+                            <option value="">Sélectionner...</option>
+                            <option value="oui">Oui, déjà réservé</option>
+                            <option value="option">En option</option>
+                            <option value="non">Non, à trouver</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Capacité requise</label>
+                        <input type="text" class="form-input" name="lieu_capacite" placeholder="Ex: 500 personnes assises">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label class="form-label">Type de lieu recherché</label>
+                        <textarea class="form-textarea small" name="lieu_type" placeholder="Ex: Hôtel 4*, Centre de congrès, Lieu atypique..."></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label class="form-label">Contraintes d'accès / Parking / Transports</label>
+                        <textarea class="form-textarea small" name="lieu_contraintes" placeholder="Parking nécessaire ? Accès PMR ? Proximité transports ?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Hébergement nécessaire ?</label>
+                        <select class="form-select" name="lieu_hebergement">
+                            <option value="">Sélectionner...</option>
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
+                            <option value="partiel">Partiellement (certains invités)</option>
+                        </select>
+                    </div>
+
+                    <!-- Technique -->
+                    <div class="form-group full-width" style="margin-top: 20px;">
+                        <h3 style="color: var(--orange-light); font-family: var(--font-heading); font-size: 16px; letter-spacing: 2px; margin-bottom: 15px;">TECHNIQUE</h3>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label class="form-label">Équipement sur place ?</label>
+                        <textarea class="form-textarea small" name="technique_equipement" placeholder="Le lieu dispose-t-il déjà d'équipements (son, lumière, écrans) ?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Capacité électrique</label>
+                        <input type="text" class="form-input" name="technique_electrique" placeholder="Ex: Puissance disponible, contraintes...">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label class="form-label">Besoins techniques spécifiques</label>
+                        <textarea class="form-textarea small" name="technique_besoins" placeholder="Ex: Scène, écrans LED, sonorisation, captation vidéo..."></textarea>
+                    </div>
+
+                    <!-- Restauration -->
+                    <div class="form-group full-width" style="margin-top: 20px;">
+                        <h3 style="color: var(--orange-light); font-family: var(--font-heading); font-size: 16px; letter-spacing: 2px; margin-bottom: 15px;">RESTAURATION</h3>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label class="form-label">Type de restauration</label>
+                        <div class="checkbox-group inline">
+                            <label class="form-check">
+                                <input type="checkbox" name="restauration_type" value="petit-dejeuner">
+                                <span class="form-check-label">Petit-déjeuner</span>
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="restauration_type" value="pauses">
+                                <span class="form-check-label">Pauses café</span>
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="restauration_type" value="cocktail">
+                                <span class="form-check-label">Cocktail</span>
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="restauration_type" value="dejeuner">
+                                <span class="form-check-label">Déjeuner</span>
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="restauration_type" value="diner-assis">
+                                <span class="form-check-label">Dîner assis</span>
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="restauration_type" value="diner-debout">
+                                <span class="form-check-label">Dîner debout</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label class="form-label">Régimes spécifiques à prévoir</label>
+                        <textarea class="form-textarea small" name="restauration_regimes" placeholder="Ex: Végétarien, Halal, Sans gluten, Allergies..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEP 10: Identité Visuelle & Communication -->
+            <section class="wizard-step" data-step="10">
+                <div class="section-header">
+                    <span class="section-icon">👁️‍🗨️</span>
+                    <div>
+                        <h2 class="section-title">Identité Visuelle & Communication</h2>
+                        <p class="section-subtitle">Charte graphique et supports</p>
+                    </div>
+                </div>
+
+                <div class="form-grid two-columns">
+                    <div class="form-group">
+                        <label class="form-label">Charte graphique existante ?</label>
+                        <select class="form-select" name="charte_existe">
+                            <option value="">Sélectionner...</option>
+                            <option value="oui">Oui, charte complète</option>
+                            <option value="partiel">Partiellement (logo + couleurs)</option>
+                            <option value="non">Non, à créer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Adaptation ou création ?</label>
+                        <select class="form-select" name="charte_adaptation">
+                            <option value="">Sélectionner...</option>
+                            <option value="adaptation">Adaptation de l'existant</option>
+                            <option value="creation">Création spécifique événement</option>
+                            <option value="mixte">Les deux</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label class="form-label">Documents fournis</label>
+                        <textarea class="form-textarea small" name="charte_documents" placeholder="Quels éléments seront fournis ? (logo, charte, photos...)"></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label class="form-label">Supports à prévoir</label>
+                        <div class="checkbox-group">
+                            <label class="form-check">
+                                <input type="checkbox" name="supports_prevoir" value="save-the-date">
+                                <span class="form-check-label">Save the date</span>
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="supports_prevoir" value="invitations">
+                                <span class="form-check-label">Invitations</span>
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="supports_prevoir" value="plateforme">
+                                <span class="form-check-label">Plateforme d'inscription</span>
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="supports_prevoir" value="signalétique">
+                                <span class="form-check-label">Signalétique</span>
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="supports_prevoir" value="ppt">
+                                <span class="form-check-label">PPT de diffusion</span>
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="supports_prevoir" value="videos">
+                                <span class="form-check-label">Vidéos</span>
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="supports_prevoir" value="chapitrage">
+                                <span class="form-check-label">Chapitrage & synthés</span>
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="supports_prevoir" value="badges">
+                                <span class="form-check-label">Badges</span>
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="supports_prevoir" value="goodies">
+                                <span class="form-check-label">Goodies</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label class="form-label">Réalisation par qui ?</label>
+                        <input type="text" class="form-input" name="supports_par_qui" placeholder="Ex: En interne, par l'agence, mixte...">
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEP 11: Budget -->
+            <section class="wizard-step" data-step="11">
+                <div class="section-header">
+                    <span class="section-icon">👛</span>
+                    <div>
+                        <h2 class="section-title">Budget</h2>
+                        <p class="section-subtitle">Enveloppe et répartition budgétaire</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Budget global estimé</label>
+                        <input type="text" class="form-input" name="budget_global" placeholder="Ex: 150 000 € HT ou fourchette 100-150 K€">
+                    </div>
+
+                    <div class="form-group full-width" style="margin-top: 20px;">
+                        <h3 style="color: var(--orange-light); font-family: var(--font-heading); font-size: 16px; letter-spacing: 2px; margin-bottom: 15px;">RÉPARTITION ENVISAGÉE</h3>
+                    </div>
+
+                    <table class="budget-table">
+                        <thead>
+                            <tr>
+                                <th>Poste</th>
+                                <th>Montant estimé</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lieu</td>
+                                <td><input type="text" class="form-input" name="budget_lieu" placeholder="€"></td>
+                            </tr>
+                            <tr>
+                                <td>Technique</td>
+                                <td><input type="text" class="form-input" name="budget_technique" placeholder="€"></td>
+                            </tr>
+                            <tr>
+                                <td>Scénographie</td>
+                                <td><input type="text" class="form-input" name="budget_scenographie" placeholder="€"></td>
+                            </tr>
+                            <tr>
+                                <td>Restauration</td>
+                                <td><input type="text" class="form-input" name="budget_restauration" placeholder="€"></td>
+                            </tr>
+                            <tr>
+                                <td>Animations</td>
+                                <td><input type="text" class="form-input" name="budget_animations" placeholder="€"></td>
+                            </tr>
+                            <tr>
+                                <td>Transports</td>
+                                <td><input type="text" class="form-input" name="budget_transports" placeholder="€"></td>
+                            </tr>
+                            <tr>
+                                <td>Hébergements</td>
+                                <td><input type="text" class="form-input" name="budget_hebergements" placeholder="€"></td>
+                            </tr>
+                            <tr>
+                                <td>Goodies</td>
+                                <td><input type="text" class="form-input" name="budget_goodies" placeholder="€"></td>
+                            </tr>
+                            <tr>
+                                <td>Autres</td>
+                                <td><input type="text" class="form-input" name="budget_autres" placeholder="€"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="form-group full-width" style="margin-top: 20px;">
+                        <h3 style="color: var(--orange-light); font-family: var(--font-heading); font-size: 16px; letter-spacing: 2px; margin-bottom: 15px;">CONTRAINTES BUDGÉTAIRES</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Éléments prioritaires</label>
+                        <textarea class="form-textarea small" name="budget_prioritaires" placeholder="Quels postes sont non négociables ?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Éléments optionnels</label>
+                        <textarea class="form-textarea small" name="budget_optionnels" placeholder="Quels postes peuvent être réduits ou supprimés ?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Arbitrages possibles</label>
+                        <textarea class="form-textarea small" name="budget_arbitrages" placeholder="Quels compromis le client est-il prêt à faire ?"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEP 12: Contraintes & Opportunités -->
+            <section class="wizard-step" data-step="12">
+                <div class="section-header">
+                    <span class="section-icon">🔍</span>
+                    <div>
+                        <h2 class="section-title">Contraintes & Opportunités</h2>
+                        <p class="section-subtitle">Points d'attention et opportunités</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <h3 style="color: var(--orange-light); font-family: var(--font-heading); font-size: 16px; letter-spacing: 2px; margin-bottom: 15px;">CONTRAINTES</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Sécurité</label>
+                        <textarea class="form-textarea small" name="contraintes_securite" placeholder="Besoins spécifiques en matière de sécurité ?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Accessibilité PMR</label>
+                        <select class="form-select" name="contraintes_pmr">
+                            <option value="">Sélectionner...</option>
+                            <option value="obligatoire">Obligatoire</option>
+                            <option value="souhaitable">Souhaitable</option>
+                            <option value="non-applicable">Non applicable</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Réglementation spécifique</label>
+                        <textarea class="form-textarea small" name="contraintes_reglementation" placeholder="Contraintes légales, autorisations nécessaires..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Confidentialité</label>
+                        <textarea class="form-textarea small" name="contraintes_confidentialite" placeholder="NDA, contenus sensibles, restrictions photos/vidéos..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Contraintes techniques / lieu</label>
+                        <textarea class="form-textarea small" name="contraintes_techniques" placeholder="Limitations du lieu, contraintes techniques spécifiques..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Contraintes horaires (montage & démontage)</label>
+                        <textarea class="form-textarea small" name="contraintes_horaires" placeholder="Créneaux imposés, durée de montage limitée..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Points sensibles</label>
+                        <textarea class="form-textarea small" name="contraintes_sensibles" placeholder="Sujets à éviter, personnes VIP, protocoles particuliers..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Non-dits identifiés</label>
+                        <textarea class="form-textarea small" name="contraintes_nondits" placeholder="Ce qui n'est pas dit explicitement mais important à savoir..."></textarea>
+                    </div>
+
+                    <div class="form-group full-width" style="margin-top: 20px;">
+                        <h3 style="color: var(--orange-light); font-family: var(--font-heading); font-size: 16px; letter-spacing: 2px; margin-bottom: 15px;">OPPORTUNITÉS</h3>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label class="form-label">Opportunités commerciales ou autres</label>
+                        <textarea class="form-textarea" name="opportunites" placeholder="Potentiel de développement, projets connexes, cross-selling..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+        </form>
+
+        <!-- Navigation -->
+        <nav class="wizard-nav">
+            <button type="button" class="btn btn-secondary" id="prevBtn" disabled>
+                ← Précédent
+            </button>
+            <button type="button" class="btn btn-primary" id="nextBtn">
+                Suivant →
+            </button>
+            <button type="button" class="btn btn-export" id="reviewBtn" style="display: none;">
+                Réviser & Exporter
+            </button>
+        </nav>
+    </div>
+
+    <!-- Review Modal -->
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">RÉCAPITULATIF DU BRIEF</h2>
+                <button type="button" class="modal-close">×</button>
+            </div>
+            <div class="modal-body">
+                <!-- Content generated by JS -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="newBrief">Nouveau Brief</button>
+                <button type="button" class="btn btn-secondary" id="exportClipboard">Copier (Google Docs)</button>
+                <button type="button" class="btn btn-primary" id="exportPdf">Exporter PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="js/brief.js"></script>
+</body>
+</html>
