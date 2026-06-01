@@ -15,8 +15,10 @@
         <!-- Sidebar Navigation -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <div class="sidebar-logo">Brief Client</div>
-                <div class="sidebar-subtitle">Future Ready</div>
+                <div class="sidebar-logo">
+                    <img src="https://i.ibb.co/BVpRqJJJ/logo-future-ready.png" alt="Future Ready" onerror="this.outerHTML='<div style=\'font-family: Bebas Neue; font-size: 24px; background: linear-gradient(135deg, #E94A8A, #7B5BA8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;\'>FUTURE READY</div>'">
+                </div>
+                <div class="sidebar-subtitle">Brief Client</div>
             </div>
 
             <nav class="sidebar-nav" id="sidebarNav">
@@ -38,40 +40,44 @@
                 </div>
                 <div class="nav-item" data-step="5">
                     <span class="nav-number">05</span>
-                    <span class="nav-label">Contexte</span>
+                    <span class="nav-label">Enjeux Stratégiques</span>
                 </div>
                 <div class="nav-item" data-step="6">
                     <span class="nav-number">06</span>
-                    <span class="nav-label">Programme Prévisionnel</span>
+                    <span class="nav-label">Tension & Transformation</span>
                 </div>
                 <div class="nav-item" data-step="7">
                     <span class="nav-number">07</span>
-                    <span class="nav-label">Concept & Expérience</span>
+                    <span class="nav-label">Programme Prévisionnel</span>
                 </div>
                 <div class="nav-item" data-step="8">
                     <span class="nav-number">08</span>
-                    <span class="nav-label">Format & Contenu</span>
+                    <span class="nav-label">Expérience & Storytelling</span>
                 </div>
                 <div class="nav-item" data-step="9">
                     <span class="nav-number">09</span>
-                    <span class="nav-label">Logistique & Technique</span>
+                    <span class="nav-label">Format & Inspirations</span>
                 </div>
                 <div class="nav-item" data-step="10">
                     <span class="nav-number">10</span>
-                    <span class="nav-label">Identité Visuelle</span>
+                    <span class="nav-label">Logistique & Technique</span>
                 </div>
                 <div class="nav-item" data-step="11">
                     <span class="nav-number">11</span>
-                    <span class="nav-label">Budget</span>
+                    <span class="nav-label">Identité Visuelle</span>
                 </div>
                 <div class="nav-item" data-step="12">
                     <span class="nav-number">12</span>
+                    <span class="nav-label">Budget</span>
+                </div>
+                <div class="nav-item" data-step="13">
+                    <span class="nav-number">13</span>
                     <span class="nav-label">Contraintes & Opportunités</span>
                 </div>
             </nav>
 
             <div class="sidebar-footer">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23F27385' width='100' height='100' rx='8'/%3E%3Ctext x='50' y='68' font-family='Arial Black, sans-serif' font-size='50' font-weight='900' fill='white' text-anchor='middle'%3EPA%3C/text%3E%3C/svg%3E" alt="Public Address">
+                <img src="https://i.ibb.co/xKpvgsN3/logo-pa.png" alt="Public Address" onerror="this.outerHTML='<div style=\'background: #F27385; color: white; font-weight: 900; font-size: 24px; padding: 10px 15px; border-radius: 6px;\'>PA</div>'">
             </div>
         </aside>
 
@@ -129,7 +135,6 @@
                         </div>
                     </div>
 
-                    <!-- Notes Block -->
                     <div class="notes-block">
                         <div class="notes-block-header">
                             <span class="notes-block-title">Notes</span>
@@ -153,6 +158,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="form-label">Fonction</label>
+                            <input type="text" class="form-input" name="contact_fonction" placeholder="Ex: Directeur Communication">
+                        </div>
+
+                        <div class="form-group">
                             <label class="form-label">Numéro de téléphone</label>
                             <input type="tel" class="form-input" name="contact_telephone" placeholder="Ex: 06 12 34 56 78">
                         </div>
@@ -160,6 +170,11 @@
                         <div class="form-group">
                             <label class="form-label">Email</label>
                             <input type="email" class="form-input" name="contact_email" placeholder="Ex: jean.dupont@entreprise.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Décisionnaire final</label>
+                            <input type="text" class="form-input" name="contact_decisionnaire" placeholder="Qui valide le projet ?">
                         </div>
                     </div>
 
@@ -191,13 +206,35 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Lieu souhaité ou zone géographique</label>
-                            <input type="text" class="form-input" name="evenement_lieu" placeholder="Ex: Métropole Lilloise">
+                            <label class="form-label">Zone géographique souhaitée</label>
+                            <input type="text" class="form-input" name="evenement_zone" placeholder="Ex: Métropole Lilloise">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label class="form-label">Lieu (si déjà choisi ou souhaité)</label>
+                            <input type="text" class="form-input" name="evenement_lieu" placeholder="Ex: Palais des Congrès de Lille">
+                            <p class="form-hint">Indiquez le nom du lieu s'il est déjà décidé ou s'il y a une préférence</p>
                         </div>
 
                         <div class="form-group full-width">
                             <label class="form-label">Format de l'événement</label>
                             <input type="text" class="form-input" name="evenement_format" placeholder="Ex: Convention + Défilé, Séminaire, Soirée de gala...">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Événement récurrent ?</label>
+                            <div class="toggle-group">
+                                <label class="toggle">
+                                    <input type="checkbox" name="evenement_recurrent" value="oui">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span class="toggle-label">Oui, événement récurrent</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Historique des éditions</label>
+                            <textarea class="form-textarea small" name="evenement_historique" placeholder="Qu'est-ce qui a fonctionné ou non lors des précédentes éditions ?"></textarea>
                         </div>
                     </div>
 
@@ -229,7 +266,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Fonction</label>
+                            <label class="form-label">Fonction / Niveau hiérarchique</label>
                             <input type="text" class="form-input" name="participants_fonction" placeholder="Ex: Managers, Commerciaux, Direction">
                         </div>
 
@@ -242,6 +279,11 @@
                             <label class="form-label">Provenance géographique</label>
                             <input type="text" class="form-input" name="participants_provenance" placeholder="Ex: France entière, Région parisienne...">
                         </div>
+
+                        <div class="form-group full-width">
+                            <label class="form-label">Profil psychologique / Culture d'entreprise</label>
+                            <textarea class="form-textarea small" name="participants_profil" placeholder="Comment décririez-vous la culture de cette entreprise ? Les participants sont-ils plutôt formels, décontractés, créatifs, traditionnels ?"></textarea>
+                        </div>
                     </div>
 
                     <div class="notes-block">
@@ -252,44 +294,51 @@
                     </div>
                 </section>
 
-                <!-- STEP 5: Contexte -->
+                <!-- STEP 5: Enjeux Stratégiques -->
                 <section class="wizard-step" data-step="5">
                     <div class="section-header">
                         <div class="section-number">Section 05</div>
-                        <h2 class="section-title">Contexte</h2>
-                        <p class="section-subtitle">Comprendre les enjeux et l'historique</p>
+                        <h2 class="section-title">Enjeux Stratégiques</h2>
+                        <p class="section-subtitle">Comprendre le contexte et les objectifs de fond</p>
                     </div>
 
-                    <div class="form-grid">
+                    <div class="strategic-block">
+                        <div class="strategic-block-title">Contexte & Déclencheur</div>
+                        <p class="strategic-block-intro">Comprendre ce qui a déclenché le besoin de cet événement permet de saisir les enjeux réels.</p>
+
                         <div class="form-group">
-                            <label class="form-label">Pourquoi cet événement est-il organisé ?</label>
-                            <textarea class="form-textarea" name="contexte_pourquoi" placeholder="Décrivez les raisons et motivations derrière cet événement..."></textarea>
+                            <label class="form-label">Pourquoi cet événement maintenant ?</label>
+                            <textarea class="form-textarea" name="contexte_pourquoi" placeholder="Qu'est-ce qui a déclenché le besoin d'organiser cet événement ? Quel est l'élément déclencheur ?"></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Historique des éditions précédentes</label>
-                            <textarea class="form-textarea small" name="contexte_historique" placeholder="Y a-t-il eu des éditions précédentes ? Qu'est-ce qui a fonctionné ou non ?"></textarea>
+                            <label class="form-label">Contexte interne de l'entreprise</label>
+                            <textarea class="form-textarea small" name="contexte_interne" placeholder="Restructuration, croissance, fusion, nouveaux objectifs, changement de direction, crise à dépasser..."></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Événement ponctuel ou récurrent ?</label>
-                            <div class="toggle-group">
-                                <label class="toggle">
-                                    <input type="checkbox" name="contexte_recurrent" value="oui">
-                                    <span class="toggle-slider"></span>
-                                </label>
-                                <span class="toggle-label">Événement récurrent</span>
-                            </div>
+                            <label class="form-label">Contexte externe / marché</label>
+                            <textarea class="form-textarea small" name="contexte_externe" placeholder="Évolutions du secteur, concurrence, réglementation, tendances qui impactent l'entreprise..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="strategic-block">
+                        <div class="strategic-block-title">Objectifs Stratégiques</div>
+                        <p class="strategic-block-intro">Au-delà de l'événement, quels sont les vrais objectifs business ?</p>
+
+                        <div class="form-group">
+                            <label class="form-label">Objectif business principal</label>
+                            <textarea class="form-textarea small" name="objectif_business" placeholder="Quel résultat concret l'entreprise attend-elle suite à cet événement ? (chiffres, comportements, décisions)"></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Contexte interne/externe particulier</label>
-                            <textarea class="form-textarea small" name="contexte_interne" placeholder="Restructuration, lancement produit, anniversaire, fusion..."></textarea>
+                            <label class="form-label">Qu'est-ce qui changerait si l'événement n'avait pas lieu ?</label>
+                            <textarea class="form-textarea small" name="objectif_contrefactuel" placeholder="Cette question permet de mesurer l'importance réelle de l'événement"></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Objectifs principaux</label>
-                            <textarea class="form-textarea" name="contexte_objectifs" placeholder="Quels sont les objectifs mesurables de cet événement ?"></textarea>
+                            <label class="form-label">Comment saura-t-on que l'événement est réussi ?</label>
+                            <textarea class="form-textarea small" name="objectif_kpi" placeholder="Quels indicateurs concrets permettront de mesurer le succès ? (au-delà de la satisfaction)"></textarea>
                         </div>
                     </div>
 
@@ -301,10 +350,71 @@
                     </div>
                 </section>
 
-                <!-- STEP 6: Programme Prévisionnel -->
+                <!-- STEP 6: Tension & Transformation -->
                 <section class="wizard-step" data-step="6">
                     <div class="section-header">
                         <div class="section-number">Section 06</div>
+                        <h2 class="section-title">Tension & Transformation</h2>
+                        <p class="section-subtitle">La clé d'un storytelling puissant selon Benoit Trystram</p>
+                    </div>
+
+                    <div class="strategic-block">
+                        <div class="strategic-block-title">Identifier la Tension</div>
+                        <p class="strategic-block-intro">Un message, c'est ce que vous voulez dire. Une tension, c'est ce que vos participants vivent, souvent sans le formuler, et qui les empêche d'avancer. C'est dans la tension que se trouve l'histoire, pas dans les messages.</p>
+
+                        <div class="form-group">
+                            <label class="form-label">Quelle est la tension que vivent les participants ?</label>
+                            <textarea class="form-textarea" name="tension_principale" placeholder="Qu'est-ce qui les tiraille ? Quelles contradictions vivent-ils au quotidien ? Ex: envie d'innover mais peur de l'échec, besoin de collaborer mais silos persistants..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Quels freins ou résistances anticipez-vous ?</label>
+                            <textarea class="form-textarea small" name="tension_freins" placeholder="Scepticisme, fatigue du changement, méfiance envers la direction, sentiment de déjà-vu..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Quel est le non-dit dans cette organisation ?</label>
+                            <textarea class="form-textarea small" name="tension_nondit" placeholder="Ce dont tout le monde a conscience mais que personne ne dit ouvertement..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="strategic-block">
+                        <div class="strategic-block-title">La Transformation Souhaitée</div>
+                        <p class="strategic-block-intro">Oubliez les messages : concentrez-vous sur ce que les participants doivent RESSENTIR en repartant.</p>
+
+                        <div class="form-group">
+                            <label class="form-label">État émotionnel à l'arrivée (avant l'événement)</label>
+                            <textarea class="form-textarea small" name="transfo_avant" placeholder="Comment arrivent-ils ? Sceptiques, curieux, fatigués, enthousiastes, inquiets ?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">État émotionnel souhaité au départ (après l'événement)</label>
+                            <textarea class="form-textarea small" name="transfo_apres" placeholder="Comment doivent-ils repartir ? Galvanisés, rassurés, fiers, connectés, engagés ?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Le déclic recherché</label>
+                            <textarea class="form-textarea" name="transfo_declic" placeholder="Quel moment de bascule doit se produire ? Quelle prise de conscience ? Quelle émotion collective ?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Comportement concret attendu après l'événement</label>
+                            <textarea class="form-textarea small" name="transfo_comportement" placeholder="Qu'est-ce que les participants feront différemment lundi matin ? Quelle action concrète ?"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="notes-block">
+                        <div class="notes-block-header">
+                            <span class="notes-block-title">Notes</span>
+                        </div>
+                        <textarea class="form-textarea" name="notes_6" placeholder="Vos remarques sur cette section..."></textarea>
+                    </div>
+                </section>
+
+                <!-- STEP 7: Programme Prévisionnel -->
+                <section class="wizard-step" data-step="7">
+                    <div class="section-header">
+                        <div class="section-number">Section 07</div>
                         <h2 class="section-title">Programme Prévisionnel</h2>
                         <p class="section-subtitle">Déroulé de la journée</p>
                     </div>
@@ -332,47 +442,56 @@
                         <div class="notes-block-header">
                             <span class="notes-block-title">Notes</span>
                         </div>
-                        <textarea class="form-textarea" name="notes_6" placeholder="Vos remarques sur cette section..."></textarea>
+                        <textarea class="form-textarea" name="notes_7" placeholder="Vos remarques sur cette section..."></textarea>
                     </div>
                 </section>
 
-                <!-- STEP 7: Concept & Expérience Souhaitée -->
-                <section class="wizard-step" data-step="7">
+                <!-- STEP 8: Expérience & Storytelling -->
+                <section class="wizard-step" data-step="8">
                     <div class="section-header">
-                        <div class="section-number">Section 07</div>
-                        <h2 class="section-title">Concept & Expérience Souhaitée</h2>
-                        <p class="section-subtitle">L'ADN de votre événement</p>
+                        <div class="section-number">Section 08</div>
+                        <h2 class="section-title">Expérience & Storytelling</h2>
+                        <p class="section-subtitle">L'ADN narratif et émotionnel de votre événement</p>
                     </div>
 
-                    <div class="form-grid">
+                    <div class="strategic-block">
+                        <div class="strategic-block-title">Narration & Message</div>
+
                         <div class="form-group">
-                            <label class="form-label">Message clé à faire passer</label>
-                            <textarea class="form-textarea" name="concept_message" placeholder="Quel est le message principal que les participants doivent retenir ?"></textarea>
+                            <label class="form-label">Si l'événement était une histoire, quel en serait le pitch ?</label>
+                            <textarea class="form-textarea" name="story_pitch" placeholder="Résumez l'événement en 2-3 phrases comme si vous racontiez une histoire..."></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Que doivent retenir les participants ?</label>
-                            <textarea class="form-textarea small" name="concept_retenir" placeholder="Les 2-3 points essentiels à mémoriser..."></textarea>
+                            <label class="form-label">Le message clé (en une phrase)</label>
+                            <input type="text" class="form-input" name="story_message" placeholder="LA phrase que tout le monde doit retenir">
                         </div>
 
+                        <div class="form-group">
+                            <label class="form-label">Thématique / Fil rouge</label>
+                            <input type="text" class="form-input" name="story_theme" placeholder="Ex: Level Up, Ensemble vers demain, L'audace de changer...">
+                        </div>
+                    </div>
+
+                    <div class="form-grid two-columns">
                         <div class="form-group">
                             <label class="form-label">Ambiance souhaitée</label>
                             <input type="text" class="form-input" name="concept_ambiance" placeholder="Ex: Dynamique, Inspirante, Conviviale, Premium...">
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Parcours attendu</label>
-                            <textarea class="form-textarea small" name="concept_parcours" placeholder="Comment les participants vont-ils vivre l'événement ?"></textarea>
+                            <label class="form-label">Registre de ton</label>
+                            <input type="text" class="form-input" name="concept_ton" placeholder="Ex: Corporate mais chaleureux, Décalé, Solennel...">
                         </div>
 
-                        <div class="form-group">
-                            <label class="form-label">Temps forts souhaités</label>
-                            <textarea class="form-textarea small" name="concept_temps_forts" placeholder="Quels sont les moments clés à créer ?"></textarea>
+                        <div class="form-group full-width">
+                            <label class="form-label">Temps forts souhaités / Moments de bascule</label>
+                            <textarea class="form-textarea small" name="concept_temps_forts" placeholder="Quels sont les moments clés qui doivent marquer les esprits ?"></textarea>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group full-width">
                             <label class="form-label">Interactions souhaitées</label>
-                            <textarea class="form-textarea small" name="concept_interactions" placeholder="Comment les participants interagissent-ils entre eux ?"></textarea>
+                            <textarea class="form-textarea small" name="concept_interactions" placeholder="Comment les participants interagissent-ils entre eux ? Quels formats participatifs ?"></textarea>
                         </div>
 
                         <div class="form-group">
@@ -392,7 +511,7 @@
 
                         <div class="form-group">
                             <label class="form-label">Cadeaux / Goodies</label>
-                            <textarea class="form-textarea small" name="concept_goodies" placeholder="Quels cadeaux ou goodies pour les participants ?"></textarea>
+                            <input type="text" class="form-input" name="concept_goodies" placeholder="Quels cadeaux ou goodies pour les participants ?">
                         </div>
                     </div>
 
@@ -400,16 +519,16 @@
                         <div class="notes-block-header">
                             <span class="notes-block-title">Notes</span>
                         </div>
-                        <textarea class="form-textarea" name="notes_7" placeholder="Vos remarques sur cette section..."></textarea>
+                        <textarea class="form-textarea" name="notes_8" placeholder="Vos remarques sur cette section..."></textarea>
                     </div>
                 </section>
 
-                <!-- STEP 8: Format & Contenu -->
-                <section class="wizard-step" data-step="8">
+                <!-- STEP 9: Format & Inspirations -->
+                <section class="wizard-step" data-step="9">
                     <div class="section-header">
-                        <div class="section-number">Section 08</div>
-                        <h2 class="section-title">Format & Contenu</h2>
-                        <p class="section-subtitle">Inspirations et références visuelles</p>
+                        <div class="section-number">Section 09</div>
+                        <h2 class="section-title">Format & Inspirations</h2>
+                        <p class="section-subtitle">Références visuelles et créatives</p>
                     </div>
 
                     <div class="form-grid">
@@ -429,13 +548,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Moodboard</label>
-                            <input type="text" class="form-input" name="format_moodboard" placeholder="Lien vers un moodboard ou description">
+                            <label class="form-label">Moodboard / Liens</label>
+                            <textarea class="form-textarea small" name="format_liens" placeholder="Liens vers moodboard, Pinterest, Drive, références diverses..."></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Liens / Documents de référence</label>
-                            <textarea class="form-textarea small" name="format_liens" placeholder="URLs, liens Drive, références diverses..."></textarea>
+                            <label class="form-label">Ce qu'il faut absolument éviter</label>
+                            <textarea class="form-textarea small" name="format_eviter" placeholder="Styles, formats, références que le client n'aime pas..."></textarea>
                         </div>
                     </div>
 
@@ -443,14 +562,14 @@
                         <div class="notes-block-header">
                             <span class="notes-block-title">Notes</span>
                         </div>
-                        <textarea class="form-textarea" name="notes_8" placeholder="Vos remarques sur cette section..."></textarea>
+                        <textarea class="form-textarea" name="notes_9" placeholder="Vos remarques sur cette section..."></textarea>
                     </div>
                 </section>
 
-                <!-- STEP 9: Logistique & Technique -->
-                <section class="wizard-step" data-step="9">
+                <!-- STEP 10: Logistique & Technique -->
+                <section class="wizard-step" data-step="10">
                     <div class="section-header">
-                        <div class="section-number">Section 09</div>
+                        <div class="section-number">Section 10</div>
                         <h2 class="section-title">Logistique & Technique</h2>
                         <p class="section-subtitle">Aspects pratiques de l'événement</p>
                     </div>
@@ -496,18 +615,8 @@
                         <h3 class="subsection-title full-width">Technique</h3>
 
                         <div class="form-group full-width">
-                            <label class="form-label">Équipement sur place ?</label>
-                            <textarea class="form-textarea small" name="technique_equipement" placeholder="Le lieu dispose-t-il déjà d'équipements (son, lumière, écrans) ?"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Capacité électrique</label>
-                            <input type="text" class="form-input" name="technique_electrique" placeholder="Ex: Puissance disponible, contraintes...">
-                        </div>
-
-                        <div class="form-group full-width">
                             <label class="form-label">Besoins techniques spécifiques</label>
-                            <textarea class="form-textarea small" name="technique_besoins" placeholder="Ex: Scène, écrans LED, sonorisation, captation vidéo..."></textarea>
+                            <textarea class="form-textarea small" name="technique_besoins" placeholder="Ex: Scène, écrans LED, sonorisation, captation vidéo, livestream..."></textarea>
                         </div>
 
                         <h3 class="subsection-title full-width">Restauration</h3>
@@ -544,7 +653,7 @@
 
                         <div class="form-group full-width">
                             <label class="form-label">Régimes spécifiques à prévoir</label>
-                            <textarea class="form-textarea small" name="restauration_regimes" placeholder="Ex: Végétarien, Halal, Sans gluten, Allergies..."></textarea>
+                            <input type="text" class="form-input" name="restauration_regimes" placeholder="Ex: Végétarien, Halal, Sans gluten, Allergies...">
                         </div>
                     </div>
 
@@ -552,14 +661,14 @@
                         <div class="notes-block-header">
                             <span class="notes-block-title">Notes</span>
                         </div>
-                        <textarea class="form-textarea" name="notes_9" placeholder="Vos remarques sur cette section..."></textarea>
+                        <textarea class="form-textarea" name="notes_10" placeholder="Vos remarques sur cette section..."></textarea>
                     </div>
                 </section>
 
-                <!-- STEP 10: Identité Visuelle & Communication -->
-                <section class="wizard-step" data-step="10">
+                <!-- STEP 11: Identité Visuelle & Communication -->
+                <section class="wizard-step" data-step="11">
                     <div class="section-header">
-                        <div class="section-number">Section 10</div>
+                        <div class="section-number">Section 11</div>
                         <h2 class="section-title">Identité Visuelle & Communication</h2>
                         <p class="section-subtitle">Charte graphique et supports</p>
                     </div>
@@ -587,7 +696,7 @@
 
                         <div class="form-group full-width">
                             <label class="form-label">Documents fournis</label>
-                            <textarea class="form-textarea small" name="charte_documents" placeholder="Quels éléments seront fournis ? (logo, charte, photos...)"></textarea>
+                            <textarea class="form-textarea small" name="charte_documents" placeholder="Quels éléments seront fournis ? (logo, charte, photos, vidéos existantes...)"></textarea>
                         </div>
 
                         <div class="form-group full-width">
@@ -625,10 +734,6 @@
                                     <input type="checkbox" name="supports_prevoir" value="badges">
                                     <span class="form-check-label">Badges</span>
                                 </label>
-                                <label class="form-check">
-                                    <input type="checkbox" name="supports_prevoir" value="goodies">
-                                    <span class="form-check-label">Goodies</span>
-                                </label>
                             </div>
                         </div>
 
@@ -642,14 +747,14 @@
                         <div class="notes-block-header">
                             <span class="notes-block-title">Notes</span>
                         </div>
-                        <textarea class="form-textarea" name="notes_10" placeholder="Vos remarques sur cette section..."></textarea>
+                        <textarea class="form-textarea" name="notes_11" placeholder="Vos remarques sur cette section..."></textarea>
                     </div>
                 </section>
 
-                <!-- STEP 11: Budget -->
-                <section class="wizard-step" data-step="11">
+                <!-- STEP 12: Budget -->
+                <section class="wizard-step" data-step="12">
                     <div class="section-header">
-                        <div class="section-number">Section 11</div>
+                        <div class="section-number">Section 12</div>
                         <h2 class="section-title">Budget</h2>
                         <p class="section-subtitle">Enveloppe et répartition budgétaire</p>
                     </div>
@@ -709,21 +814,16 @@
                             </tbody>
                         </table>
 
-                        <h3 class="subsection-title">Contraintes budgétaires</h3>
+                        <h3 class="subsection-title">Priorisation</h3>
 
                         <div class="form-group">
-                            <label class="form-label">Éléments prioritaires</label>
-                            <textarea class="form-textarea small" name="budget_prioritaires" placeholder="Quels postes sont non négociables ?"></textarea>
+                            <label class="form-label">Éléments prioritaires (non négociables)</label>
+                            <textarea class="form-textarea small" name="budget_prioritaires" placeholder="Quels postes sont indispensables au succès de l'événement ?"></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Éléments optionnels</label>
-                            <textarea class="form-textarea small" name="budget_optionnels" placeholder="Quels postes peuvent être réduits ou supprimés ?"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Arbitrages possibles</label>
-                            <textarea class="form-textarea small" name="budget_arbitrages" placeholder="Quels compromis le client est-il prêt à faire ?"></textarea>
+                            <label class="form-label">Éléments optionnels (nice to have)</label>
+                            <textarea class="form-textarea small" name="budget_optionnels" placeholder="Quels postes peuvent être réduits ou supprimés si nécessaire ?"></textarea>
                         </div>
                     </div>
 
@@ -731,14 +831,14 @@
                         <div class="notes-block-header">
                             <span class="notes-block-title">Notes</span>
                         </div>
-                        <textarea class="form-textarea" name="notes_11" placeholder="Vos remarques sur cette section..."></textarea>
+                        <textarea class="form-textarea" name="notes_12" placeholder="Vos remarques sur cette section..."></textarea>
                     </div>
                 </section>
 
-                <!-- STEP 12: Contraintes & Opportunités -->
-                <section class="wizard-step" data-step="12">
+                <!-- STEP 13: Contraintes & Opportunités -->
+                <section class="wizard-step" data-step="13">
                     <div class="section-header">
-                        <div class="section-number">Section 12</div>
+                        <div class="section-number">Section 13</div>
                         <h2 class="section-title">Contraintes & Opportunités</h2>
                         <p class="section-subtitle">Points d'attention et opportunités</p>
                     </div>
@@ -762,18 +862,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Réglementation spécifique</label>
-                            <textarea class="form-textarea small" name="contraintes_reglementation" placeholder="Contraintes légales, autorisations nécessaires..."></textarea>
-                        </div>
-
-                        <div class="form-group">
                             <label class="form-label">Confidentialité</label>
                             <textarea class="form-textarea small" name="contraintes_confidentialite" placeholder="NDA, contenus sensibles, restrictions photos/vidéos..."></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Contraintes techniques / lieu</label>
-                            <textarea class="form-textarea small" name="contraintes_techniques" placeholder="Limitations du lieu, contraintes techniques spécifiques..."></textarea>
                         </div>
 
                         <div class="form-group">
@@ -782,20 +872,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Points sensibles</label>
-                            <textarea class="form-textarea small" name="contraintes_sensibles" placeholder="Sujets à éviter, personnes VIP, protocoles particuliers..."></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Non-dits identifiés</label>
-                            <textarea class="form-textarea small" name="contraintes_nondits" placeholder="Ce qui n'est pas dit explicitement mais important à savoir..."></textarea>
+                            <label class="form-label">Points sensibles / Sujets à éviter</label>
+                            <textarea class="form-textarea small" name="contraintes_sensibles" placeholder="Sujets tabous, personnes VIP avec protocole, rivalités internes..."></textarea>
                         </div>
 
                         <h3 class="subsection-title">Opportunités</h3>
 
                         <div class="form-group full-width">
-                            <label class="form-label">Opportunités commerciales ou autres</label>
-                            <textarea class="form-textarea" name="opportunites" placeholder="Potentiel de développement, projets connexes, cross-selling..."></textarea>
+                            <label class="form-label">Opportunités commerciales</label>
+                            <textarea class="form-textarea" name="opportunites" placeholder="Potentiel de développement, projets connexes, autres événements à venir, cross-selling..."></textarea>
                         </div>
                     </div>
 
@@ -803,7 +888,7 @@
                         <div class="notes-block-header">
                             <span class="notes-block-title">Notes</span>
                         </div>
-                        <textarea class="form-textarea" name="notes_12" placeholder="Vos remarques sur cette section..."></textarea>
+                        <textarea class="form-textarea" name="notes_13" placeholder="Vos remarques sur cette section..."></textarea>
                     </div>
                 </section>
 

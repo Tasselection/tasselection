@@ -12,21 +12,22 @@
 
     const STORAGE_KEY = 'client_brief_draft';
     const AUTO_SAVE_DELAY = 1000;
-    const TOTAL_STEPS = 12;
+    const TOTAL_STEPS = 13;
 
     const SECTIONS = [
         { id: 1, name: 'Informations Générales' },
         { id: 2, name: 'Contact Client' },
         { id: 3, name: 'Informations Projet' },
         { id: 4, name: 'Cible & Participants' },
-        { id: 5, name: 'Contexte' },
-        { id: 6, name: 'Programme Prévisionnel' },
-        { id: 7, name: 'Concept & Expérience' },
-        { id: 8, name: 'Format & Contenu' },
-        { id: 9, name: 'Logistique & Technique' },
-        { id: 10, name: 'Identité Visuelle' },
-        { id: 11, name: 'Budget' },
-        { id: 12, name: 'Contraintes & Opportunités' }
+        { id: 5, name: 'Enjeux Stratégiques' },
+        { id: 6, name: 'Tension & Transformation' },
+        { id: 7, name: 'Programme Prévisionnel' },
+        { id: 8, name: 'Expérience & Storytelling' },
+        { id: 9, name: 'Format & Inspirations' },
+        { id: 10, name: 'Logistique & Technique' },
+        { id: 11, name: 'Identité Visuelle' },
+        { id: 12, name: 'Budget' },
+        { id: 13, name: 'Contraintes & Opportunités' }
     ];
 
     // ===========================================
@@ -511,15 +512,20 @@
             ],
             2: [
                 { name: 'contact_nom', label: 'Nom & Prénom', type: 'text' },
+                { name: 'contact_fonction', label: 'Fonction', type: 'text' },
                 { name: 'contact_telephone', label: 'Téléphone', type: 'text' },
                 { name: 'contact_email', label: 'Email', type: 'text' },
+                { name: 'contact_decisionnaire', label: 'Décisionnaire final', type: 'text' },
                 { name: 'notes_2', label: 'Notes', type: 'textarea' }
             ],
             3: [
                 { name: 'evenement_nom', label: 'Nom de l\'événement', type: 'text' },
                 { name: 'evenement_dates', label: 'Date(s) envisagée(s)', type: 'text' },
-                { name: 'evenement_lieu', label: 'Lieu / Zone géographique', type: 'text' },
+                { name: 'evenement_zone', label: 'Zone géographique', type: 'text' },
+                { name: 'evenement_lieu', label: 'Lieu', type: 'text' },
                 { name: 'evenement_format', label: 'Format', type: 'text' },
+                { name: 'evenement_recurrent', label: 'Événement récurrent', type: 'text' },
+                { name: 'evenement_historique', label: 'Historique des éditions', type: 'textarea' },
                 { name: 'notes_3', label: 'Notes', type: 'textarea' }
             ],
             4: [
@@ -528,63 +534,74 @@
                 { name: 'participants_fonction', label: 'Fonction', type: 'text' },
                 { name: 'participants_age', label: 'Âge moyen', type: 'text' },
                 { name: 'participants_provenance', label: 'Provenance géographique', type: 'text' },
+                { name: 'participants_profil', label: 'Profil / Culture d\'entreprise', type: 'textarea' },
                 { name: 'notes_4', label: 'Notes', type: 'textarea' }
             ],
             5: [
-                { name: 'contexte_pourquoi', label: 'Pourquoi cet événement ?', type: 'textarea' },
-                { name: 'contexte_historique', label: 'Historique des éditions', type: 'textarea' },
-                { name: 'contexte_recurrent', label: 'Événement récurrent ?', type: 'text' },
-                { name: 'contexte_interne', label: 'Contexte interne/externe', type: 'textarea' },
-                { name: 'contexte_objectifs', label: 'Objectifs principaux', type: 'textarea' },
+                { name: 'contexte_pourquoi', label: 'Pourquoi cet événement maintenant ?', type: 'textarea' },
+                { name: 'contexte_interne', label: 'Contexte interne', type: 'textarea' },
+                { name: 'contexte_externe', label: 'Contexte externe / marché', type: 'textarea' },
+                { name: 'objectif_business', label: 'Objectif business principal', type: 'textarea' },
+                { name: 'objectif_contrefactuel', label: 'Si l\'événement n\'avait pas lieu ?', type: 'textarea' },
+                { name: 'objectif_kpi', label: 'Indicateurs de succès', type: 'textarea' },
                 { name: 'notes_5', label: 'Notes', type: 'textarea' }
             ],
             6: [
-                { name: 'programme_timeline', label: 'Programme', type: 'timeline' },
+                { name: 'tension_principale', label: 'Tension vécue par les participants', type: 'textarea' },
+                { name: 'tension_freins', label: 'Freins et résistances', type: 'textarea' },
+                { name: 'tension_nondit', label: 'Non-dit organisationnel', type: 'textarea' },
+                { name: 'transfo_avant', label: 'État émotionnel avant', type: 'textarea' },
+                { name: 'transfo_apres', label: 'État émotionnel après', type: 'textarea' },
+                { name: 'transfo_declic', label: 'Déclic recherché', type: 'textarea' },
+                { name: 'transfo_comportement', label: 'Comportement attendu après', type: 'textarea' },
                 { name: 'notes_6', label: 'Notes', type: 'textarea' }
             ],
             7: [
-                { name: 'concept_message', label: 'Message clé', type: 'textarea' },
-                { name: 'concept_retenir', label: 'À retenir', type: 'textarea' },
+                { name: 'programme_timeline', label: 'Programme', type: 'timeline' },
+                { name: 'notes_7', label: 'Notes', type: 'textarea' }
+            ],
+            8: [
+                { name: 'story_pitch', label: 'Pitch de l\'événement', type: 'textarea' },
+                { name: 'story_message', label: 'Message clé', type: 'text' },
+                { name: 'story_theme', label: 'Thématique / Fil rouge', type: 'text' },
                 { name: 'concept_ambiance', label: 'Ambiance souhaitée', type: 'text' },
-                { name: 'concept_parcours', label: 'Parcours attendu', type: 'textarea' },
+                { name: 'concept_ton', label: 'Registre de ton', type: 'text' },
                 { name: 'concept_temps_forts', label: 'Temps forts', type: 'textarea' },
                 { name: 'concept_interactions', label: 'Interactions', type: 'textarea' },
                 { name: 'concept_animations', label: 'Animations', type: 'text' },
                 { name: 'concept_speaker', label: 'Speaker', type: 'text' },
                 { name: 'concept_digital', label: 'Digital / Gamification', type: 'text' },
-                { name: 'concept_goodies', label: 'Cadeaux / Goodies', type: 'textarea' },
-                { name: 'notes_7', label: 'Notes', type: 'textarea' }
-            ],
-            8: [
-                { name: 'format_inspirations', label: 'Événements inspirants', type: 'textarea' },
-                { name: 'format_univers', label: 'Univers visuels', type: 'textarea' },
-                { name: 'format_marques', label: 'Marques de référence', type: 'textarea' },
-                { name: 'format_moodboard', label: 'Moodboard', type: 'text' },
-                { name: 'format_liens', label: 'Liens / Documents', type: 'textarea' },
+                { name: 'concept_goodies', label: 'Goodies', type: 'text' },
                 { name: 'notes_8', label: 'Notes', type: 'textarea' }
             ],
             9: [
+                { name: 'format_inspirations', label: 'Événements inspirants', type: 'textarea' },
+                { name: 'format_univers', label: 'Univers visuels', type: 'textarea' },
+                { name: 'format_marques', label: 'Marques de référence', type: 'textarea' },
+                { name: 'format_liens', label: 'Moodboard / Liens', type: 'textarea' },
+                { name: 'format_eviter', label: 'À éviter', type: 'textarea' },
+                { name: 'notes_9', label: 'Notes', type: 'textarea' }
+            ],
+            10: [
                 { name: 'lieu_reserve', label: 'Lieu déjà réservé ?', type: 'text' },
                 { name: 'lieu_type', label: 'Type de lieu recherché', type: 'textarea' },
                 { name: 'lieu_capacite', label: 'Capacité', type: 'text' },
                 { name: 'lieu_contraintes', label: 'Contraintes d\'accès', type: 'textarea' },
                 { name: 'lieu_hebergement', label: 'Hébergement nécessaire ?', type: 'text' },
-                { name: 'technique_equipement', label: 'Équipement sur place', type: 'textarea' },
-                { name: 'technique_electrique', label: 'Capacité électrique', type: 'text' },
                 { name: 'technique_besoins', label: 'Besoins techniques', type: 'textarea' },
                 { name: 'restauration_type', label: 'Type de restauration', type: 'array' },
-                { name: 'restauration_regimes', label: 'Régimes spécifiques', type: 'textarea' },
-                { name: 'notes_9', label: 'Notes', type: 'textarea' }
-            ],
-            10: [
-                { name: 'charte_existe', label: 'Charte graphique existante ?', type: 'text' },
-                { name: 'charte_documents', label: 'Documents fournis', type: 'textarea' },
-                { name: 'charte_adaptation', label: 'Adaptation ou création ?', type: 'text' },
-                { name: 'supports_prevoir', label: 'Supports à prévoir', type: 'array' },
-                { name: 'supports_par_qui', label: 'Par qui ?', type: 'text' },
+                { name: 'restauration_regimes', label: 'Régimes spécifiques', type: 'text' },
                 { name: 'notes_10', label: 'Notes', type: 'textarea' }
             ],
             11: [
+                { name: 'charte_existe', label: 'Charte graphique existante ?', type: 'text' },
+                { name: 'charte_adaptation', label: 'Adaptation ou création ?', type: 'text' },
+                { name: 'charte_documents', label: 'Documents fournis', type: 'textarea' },
+                { name: 'supports_prevoir', label: 'Supports à prévoir', type: 'array' },
+                { name: 'supports_par_qui', label: 'Par qui ?', type: 'text' },
+                { name: 'notes_11', label: 'Notes', type: 'textarea' }
+            ],
+            12: [
                 { name: 'budget_global', label: 'Budget global estimé', type: 'text' },
                 { name: 'budget_lieu', label: 'Budget Lieu', type: 'text' },
                 { name: 'budget_technique', label: 'Budget Technique', type: 'text' },
@@ -597,20 +614,16 @@
                 { name: 'budget_autres', label: 'Budget Autres', type: 'text' },
                 { name: 'budget_prioritaires', label: 'Éléments prioritaires', type: 'textarea' },
                 { name: 'budget_optionnels', label: 'Éléments optionnels', type: 'textarea' },
-                { name: 'budget_arbitrages', label: 'Arbitrages possibles', type: 'textarea' },
-                { name: 'notes_11', label: 'Notes', type: 'textarea' }
+                { name: 'notes_12', label: 'Notes', type: 'textarea' }
             ],
-            12: [
+            13: [
                 { name: 'contraintes_securite', label: 'Sécurité', type: 'textarea' },
                 { name: 'contraintes_pmr', label: 'Accessibilité PMR', type: 'text' },
-                { name: 'contraintes_reglementation', label: 'Réglementation', type: 'textarea' },
                 { name: 'contraintes_confidentialite', label: 'Confidentialité', type: 'textarea' },
-                { name: 'contraintes_techniques', label: 'Contraintes techniques', type: 'textarea' },
                 { name: 'contraintes_horaires', label: 'Contraintes horaires', type: 'textarea' },
                 { name: 'contraintes_sensibles', label: 'Points sensibles', type: 'textarea' },
-                { name: 'contraintes_nondits', label: 'Non-dits identifiés', type: 'textarea' },
                 { name: 'opportunites', label: 'Opportunités commerciales', type: 'textarea' },
-                { name: 'notes_12', label: 'Notes', type: 'textarea' }
+                { name: 'notes_13', label: 'Notes', type: 'textarea' }
             ]
         };
 

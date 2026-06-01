@@ -12,6 +12,7 @@
     --violet-dark: #5C4387;
     --gradient: linear-gradient(135deg, var(--pink) 0%, var(--violet) 100%);
     --gradient-reverse: linear-gradient(135deg, var(--violet) 0%, var(--pink) 100%);
+    --gradient-bg: linear-gradient(160deg, #0A0A0A 0%, #1a0a12 40%, #150a18 70%, #0A0A0A 100%);
 
     --black: #0A0A0A;
     --black-soft: #141414;
@@ -60,7 +61,7 @@ html {
 
 body {
     font-family: var(--font-body);
-    background: var(--black);
+    background: var(--gradient-bg);
     color: var(--white);
     line-height: 1.6;
     min-height: 100vh;
@@ -85,34 +86,33 @@ body {
     top: 0;
     width: 280px;
     height: 100vh;
-    background: var(--black-soft);
+    background: rgba(10, 10, 10, 0.95);
     border-right: 1px solid rgba(233, 74, 138, 0.1);
     display: flex;
     flex-direction: column;
     z-index: 100;
     overflow-y: auto;
+    backdrop-filter: blur(10px);
 }
 
 .sidebar-header {
     padding: var(--space-xl) var(--space-lg);
     border-bottom: 1px solid rgba(233, 74, 138, 0.1);
+    text-align: center;
 }
 
 .sidebar-logo {
-    font-family: var(--font-heading);
-    font-size: 28px;
-    letter-spacing: 2px;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-transform: uppercase;
+    margin-bottom: var(--space-sm);
+}
+
+.sidebar-logo img {
+    max-width: 180px;
+    height: auto;
 }
 
 .sidebar-subtitle {
     font-size: 11px;
     color: var(--gray);
-    margin-top: var(--space-xs);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -183,11 +183,12 @@ body {
 .sidebar-footer {
     padding: var(--space-lg);
     border-top: 1px solid rgba(233, 74, 138, 0.1);
+    text-align: center;
 }
 
 .sidebar-footer img {
-    height: 40px;
-    opacity: 0.8;
+    height: 50px;
+    width: auto;
 }
 
 /* ===========================================
@@ -206,7 +207,7 @@ body {
     text-align: center;
     padding: var(--space-2xl) var(--space-lg);
     margin-bottom: var(--space-2xl);
-    background: var(--black-card);
+    background: rgba(26, 26, 26, 0.6);
     border: 1px solid rgba(233, 74, 138, 0.15);
     border-radius: 8px;
     position: relative;
@@ -263,7 +264,7 @@ body {
 .section-header {
     margin-bottom: var(--space-xl);
     padding: var(--space-lg);
-    background: var(--black-card);
+    background: rgba(26, 26, 26, 0.6);
     border: 1px solid rgba(233, 74, 138, 0.15);
     border-radius: 8px;
     position: relative;
@@ -342,6 +343,7 @@ body {
     font-size: 12px;
     color: var(--gray);
     margin-top: var(--space-xs);
+    font-style: italic;
 }
 
 /* Text Input */
@@ -541,6 +543,35 @@ body {
     text-transform: uppercase;
 }
 
+/* Strategic Block */
+.strategic-block {
+    background: linear-gradient(135deg, rgba(233, 74, 138, 0.08) 0%, rgba(123, 91, 168, 0.08) 100%);
+    border: 1px solid rgba(233, 74, 138, 0.2);
+    border-radius: 8px;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.strategic-block-title {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    letter-spacing: 2px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+}
+
+.strategic-block-intro {
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: var(--space-md);
+    font-style: italic;
+    line-height: 1.6;
+}
+
 /* ===========================================
    TIMELINE BUILDER
    =========================================== */
@@ -556,7 +587,7 @@ body {
     gap: var(--space-md);
     align-items: flex-start;
     padding: var(--space-md);
-    background: var(--black-card);
+    background: rgba(26, 26, 26, 0.6);
     border: 1px solid rgba(233, 74, 138, 0.1);
     border-radius: 4px;
 }
@@ -625,7 +656,7 @@ body {
 .notes-block {
     margin-top: var(--space-2xl);
     padding: var(--space-lg);
-    background: var(--black-card);
+    background: rgba(26, 26, 26, 0.6);
     border: 1px solid rgba(233, 74, 138, 0.15);
     border-radius: 8px;
 }
@@ -873,7 +904,7 @@ body {
 }
 
 .toast {
-    background: var(--black-card);
+    background: rgba(26, 26, 26, 0.95);
     border: 1px solid rgba(233, 74, 138, 0.3);
     border-radius: 4px;
     padding: var(--space-md) var(--space-lg);
@@ -915,7 +946,7 @@ body {
     align-items: center;
     gap: var(--space-sm);
     padding: var(--space-sm) var(--space-md);
-    background: var(--black-card);
+    background: rgba(26, 26, 26, 0.95);
     border: 1px solid rgba(233, 74, 138, 0.2);
     border-radius: 4px;
     font-size: 12px;
